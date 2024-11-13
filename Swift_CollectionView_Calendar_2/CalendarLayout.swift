@@ -68,11 +68,16 @@ class CalendarLayout: UICollectionViewLayout {
         return cache.filter { $0.frame.intersects(rect) }
     }
 
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cache[indexPath.item + numberOfDays + numberOfTimeSlots] // Adjust for cells
-    }
-
-    override func layoutAttributesForSupplementaryView(ofKind kind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cache[indexPath.item] // Use the correct index for headers
-    }
+    // TODO: use if want to adjust item attribute (layout, shaddow, color,...)
+//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+//        return cache[indexPath.item + numberOfDays + numberOfTimeSlots] // Adjust for cells
+//    }
+//
+//    override func layoutAttributesForSupplementaryView(ofKind kind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+//        if kind == UICollectionView.elementKindSectionHeader {
+//            return cache[indexPath.item]
+//        } else {
+//            return cache[indexPath.item + numberOfDays] // Use the correct index for headers
+//        }
+//    }
 }
